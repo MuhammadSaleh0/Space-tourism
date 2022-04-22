@@ -1,0 +1,90 @@
+//- extends from index.pug
+
+extends index.pug
+
+//- CSS FILE:
+block css-page   
+  link(rel="stylesheet" href="../css/Main/destination.css")
+
+//- Content of the page:
+
+block pageContent
+  section
+    .container
+      .head-destination
+        h3 
+          span 01
+          |Pick your destination 
+      .img-slider
+        img(src="../imgs/destination/image-moon.png" alt="moon" class="visible")
+        img(src="../imgs/destination/image-mars.png" alt="mars")
+        img(src="../imgs/destination/image-europa.png" alt="europa")
+        img(src="../imgs/destination/image-titan.png" alt="titan")
+      .planets-data
+        .nav.destination
+          button.active(data-class="moon") MOON
+          button(data-class="mars")  MARS
+          button(data-class="europa")  EUROPA
+          button(data-class="titan") TITAN
+        .info
+          .card(class="moon" class="visible")
+            .planet-title          
+              h3 MOON
+              p See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
+            .planets-distance 
+              .distance
+                small  AVG. DISTANCE
+                h4 384,400 km
+              .travel-time 
+                small  Est. travel time
+                h4 3 days
+          .card(class="mars")
+            .planet-title
+              h3 MARS
+              p Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!
+            .planets-distance 
+              .distance
+                small  AVG. DISTANCE
+                h4 225 MIL. km
+              .travel-time 
+                small  Est. travel time
+                h4 9 months
+          .card(class="europa")
+            .planet-title
+              h3 EUROPA
+              p The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.
+            .planets-distance 
+              .distance
+                small  AVG. DISTANCE
+                h4 628 MIL. km
+              .travel-time 
+                small  Est. travel time
+                h4 3 years
+          .card(class="titan")
+            .planet-title
+              h3 TITAN
+              p The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.
+            .planets-distance 
+              .distance
+                small  AVG. DISTANCE
+                h4 1.6 BIL. km
+              .travel-time 
+                small  Est. travel time
+                h4 7 years
+
+
+
+
+
+block liClassDestination
+  li.active
+    a(href="destination.html") 
+      span 01
+      span DESTINATION
+
+
+block liClassHome
+  li
+    a(href="index.html") 
+      span 00
+      span Home

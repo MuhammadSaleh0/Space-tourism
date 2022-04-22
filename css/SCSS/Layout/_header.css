@@ -1,0 +1,38 @@
+body header {
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+}
+body header .burger {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+body header nav {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(81.5485px);
+  color: white;
+  height: calc(100vh - 80px);
+  width: 60%;
+  transform: scale(0);
+  transition: 0.5s;
+}
+body header nav ul {
+  text-align: center;
+  margin-top: 60px;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 20px;
+  font-style: italic;
+}
+body header nav ul li a {
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}

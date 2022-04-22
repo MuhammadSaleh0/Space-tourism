@@ -1,0 +1,26 @@
+.mobile-active {
+
+    visibility: visible !important;
+    transform: translateX(0px) !important;
+    opacity: 1 !important;
+    // transform: scale(1) !important;
+
+}
+
+.active {
+    border-bottom: 2px solid white !important;
+    color: white !important;
+}
+
+.visible {
+    transform: scale(1) !important;
+}
+
+.active-crew {
+    background-color: white !important;
+}
+
+.active-tech {
+    background-color: white !important;
+    color: black !important;
+}

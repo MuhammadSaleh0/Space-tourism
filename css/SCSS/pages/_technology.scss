@@ -1,0 +1,175 @@
+body {
+    background-image: url(../../../imgs/technology/background-technology-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+
+    @include MediaQ(medium) {
+        background-image: url(../../../imgs/technology/background-technology-tablet.jpg);
+    }
+
+    @include MediaQ(large) {
+        background-image: url(../../../imgs/technology/background-technology-desktop.jpg);
+    }
+
+    section {
+        .container {
+            color: white;
+            text-align: center;
+            position: relative;
+
+            @include MediaQ(xLarge) {
+                width: 90%;
+                margin: 0 auto;
+                @include centerlize(space-between, center);
+                flex-direction: row-reverse !important;
+                gap: 150px;
+            }
+
+            @include MediaQ(medium) {
+                @include centerlize(center, center);
+                flex-direction: column;
+            }
+
+            .head-technology {
+                /// this mixin for global styels for head title of the pages
+                @include headTitle();
+            }
+
+            .img-slider {
+                width: 100%;
+                height: 170px;
+                margin: 35px auto 20px;
+                overflow: hidden;
+                position: relative;
+
+                @include MediaQ(medium) {
+                    height: 310px;
+                    margin: 90px auto 30px;
+                }
+
+                @include MediaQ(xLarge) {
+                    width: 495px;
+                    height: 505px;
+                    margin: 0;
+                }
+
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(0);
+                    transition: .5s ease-in-out;
+
+                }
+            }
+
+            .tec-content {
+                @include centerlize(center, space-evenly);
+                flex-direction: column;
+
+
+                @include MediaQ(medium) {
+                    flex-direction: column;
+                    @include centerlize(center, center);
+                    width: 85%;
+                    margin-bottom: 30px;
+                }
+
+                @include MediaQ(xLarge) {
+                    flex-direction: row;
+                    gap: 70px;
+                    text-align: start;
+                    width: 53%;
+                    margin: 0;
+                }
+
+                .technology {
+                    margin-bottom: 35px;
+
+                    @include MediaQ(xLarge) {
+                        @include centerlize(space-evenly, center);
+                        flex-direction: column;
+                        gap: 55px;
+                        height: 100%;
+                        margin: 0;
+                    }
+
+                    button {
+                        display: inline-block;
+                        @include circel(58);
+                        cursor: pointer;
+                        margin: 0 10px;
+                        background-color: transparent;
+                        border: 1px solid grey;
+                        color: white;
+                        font-size: 20px;
+                        transition: .5s;
+
+                        &:hover:not(.active) {
+                            background-color: rgb(140, 238, 165);
+                            outline: 1px $maincolor solid;
+                            color: black;
+                        }
+                    }
+                }
+
+                .info {
+                    position: relative;
+                    width: 100%;
+                    min-height: 300px;
+
+                    @include MediaQ(medium) {
+                        min-height: 260px;
+                        margin-top: 60px;
+                    }
+
+                    @include MediaQ(xLarge) {
+                        min-height: 300px;
+                    }
+
+                    .card {
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        transform: scale(0);
+                        transition: .5s ease-in-out;
+                        overflow: hidden;
+
+                        small {
+                            text-transform: uppercase;
+                            mix-blend-mode: normal;
+                            @include fonts-details(var(--fs-para), var(--ln-para));
+                        }
+
+                        h3 {
+                            @include fonts-details(calc(var(--fs-title) - 1.2rem), var(--ln-title));
+                            text-transform: uppercase;
+                            letter-spacing: 3px;
+                            margin: 25px 0 18px;
+
+                            @include MediaQ(medium) {
+                                margin: 20px 0 10px;
+                            }
+
+                            @include MediaQ(xLarge) {
+                                margin: 25px 0 10px;
+                            }
+                        }
+
+                        p {
+
+                            color: $maincolor;
+                            padding: 20px 0;
+                            @include fonts-details(var(--fs-para), var(--ln-para));
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

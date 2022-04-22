@@ -1,0 +1,161 @@
+body {
+    background-image: url(../../../imgs/crew/background-crew-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+
+    @include MediaQ(medium) {
+        background-image: url(../../../imgs/crew/background-crew-tablet.jpg);
+    }
+
+    @include MediaQ(large) {
+        background-image: url(../../../imgs/crew/background-crew-tablet.jpg);
+    }
+
+    section {
+        .container {
+            color: white;
+            text-align: center;
+            position: relative;
+
+            @include MediaQ(xLarge) {
+                width: 85%;
+                margin: 0 auto;
+                @include centerlize(space-between, center);
+                flex-direction: row-reverse !important;
+                gap: 110px;
+            }
+
+            @include MediaQ(medium) {
+                @include centerlize(center, center);
+                flex-direction: column-reverse;
+            }
+
+
+            .head-crew {
+                /// this mixin for global styels for head title of the pages
+                @include headTitle();
+            }
+
+            .img-slider {
+                width: 190px;
+                height: 250px;
+                margin: 35px auto 20px;
+                overflow: hidden;
+                position: relative;
+
+                @include MediaQ(medium) {
+                    width: 390px;
+                    height: 500px;
+                }
+
+                @include MediaQ(xLarge) {
+                    width: 400px;
+                    height: 510px;
+                    margin: 0;
+                }
+
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(0);
+                    transition: .5s ease-in-out;
+                }
+            }
+
+            .crew-content {
+                @include centerlize(center, space-evenly);
+                flex-direction: column;
+
+
+                @include MediaQ(medium) {
+                    flex-direction: column-reverse;
+                    @include centerlize(center, center);
+                    width: 85%;
+                    margin: 55px auto 0;
+                }
+
+                @include MediaQ(xLarge) {
+                    text-align: start;
+                    width: 53%;
+                }
+
+                .crew {
+                    margin-bottom: 25px;
+
+                    @include MediaQ(medium) {
+                        margin: 0;
+                    }
+
+                    @include MediaQ(xLarge) {
+                        margin: 15px auto 0 0;
+                    }
+
+                    button {
+                        @include bullet-props();
+                    }
+                }
+
+                .info {
+                    position: relative;
+                    width: 100%;
+                    min-height: 280px;
+
+                    @include MediaQ(medium) {
+                        min-height: 260px;
+                    }
+
+                    @include MediaQ(xLarge) {
+                        min-height: 285px;
+                    }
+
+                    .card {
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        transform: scale(0);
+                        transition: .5s ease-in-out;
+                        overflow: hidden;
+
+                        small {
+                            text-transform: uppercase;
+                            letter-spacing: 3px;
+                            mix-blend-mode: normal;
+                            color: #d3d1d1;
+                            @include fonts-details(var(--fs-para), var(--ln-para));
+                        }
+
+                        h4 {
+                            @include fonts-details(calc(var(--fs-title) - 0.95rem), var(--ln-title));
+                            text-transform: uppercase;
+                            letter-spacing: 3px;
+                            margin: 25px 0 18px;
+
+                            @include MediaQ(medium) {
+                                margin: 25px 0 10px;
+                            }
+
+                            @include MediaQ(xLarge) {
+                                margin: 25px 0 10px;
+                            }
+                        }
+
+                        p {
+                            @include fonts-details(var(--fs-para), var(--ln-para));
+                            color: $maincolor;
+                            padding: 20px 0;
+
+
+                            @include MediaQ(xLarge) {
+                                max-width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

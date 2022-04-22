@@ -1,0 +1,49 @@
+@mixin fonts-details($fontsize, $lineheight) {
+  @content;
+  font-size: $fontsize;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $lineheight;
+}
+
+
+@mixin button-details($fontsize, $lineheight) {
+  @content;
+  display: inline-block;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: $maincolor;
+  cursor: pointer;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  transition: all 0.6s ease-in-out;
+}
+
+
+
+@mixin bullet-props {
+  @content;
+  cursor: pointer;
+  @include circel(18);
+  background-color: #8a8a8a;
+  margin: 10px;
+  border: none;
+  outline: none;
+  transition: all .3s ease-out;
+
+  &:hover {
+    background-color: white;
+    outline: 2px $maincolor solid;
+  }
+
+  @include MediaQ(medium) {
+    @include circel(14);
+  }
+
+  @include MediaQ(xLarge) {
+    @include circel(35);
+  }
+}

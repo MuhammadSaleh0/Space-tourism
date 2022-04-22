@@ -1,0 +1,68 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Space-Tourism Homepage
+            //-import webfont Library 
+        link(rel="stylesheet" href="../css/Main/all.min.css")
+            //-import css Home page 
+        block css-page   
+            link(rel="stylesheet" href="../css/Main/homePage.css")
+            //-import normalize file 
+        link(rel="stylesheet" href="../css/Main/normalize.css")
+            //-linking font family 
+        link(href="https://fonts.googleapis.com" rel="preconnect")
+        link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;700\&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cairo:wght@200;300&display=swap" rel="stylesheet")
+
+    body
+        //-start header
+        header
+            .logo
+                a(href="homePage.html")
+                    img(src="../imgs/shared/logo.svg" alt="logo")
+            .burger
+                img( class="burger" src="../imgs/shared/icon-hamburger.svg" alt="burger Icon")
+            nav#nav
+                span.close x
+                ul
+                    block liClassHome
+                        li.active
+                            a(href="index.html") 
+                                span 00
+                                span Home
+                    block liClassDestination
+                        li 
+                            a(href="destination.html") 
+                                span 01
+                                span DESTINATION
+                    block liClassCrew
+                        li 
+                            a(href="crew.html") 
+                                span 02
+                                span CREW
+                    block liClassTechnology
+                        li 
+                            a(href="technology.html") 
+                                span 03
+                                span TECHNOLOGY
+        block pageContent 
+            section 
+                .container
+                    .text
+                        h4 SO, YOU WANT TO TRAVEL TO  
+                        h3 SPACE  
+                        p Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!  
+                    .circel
+                        .front
+                            h3 EXPLORE
+                        .back
+                            h3 SPACE
+
+
+        script(src="../js/main.js") 
+
+//-ebd header 
+
+

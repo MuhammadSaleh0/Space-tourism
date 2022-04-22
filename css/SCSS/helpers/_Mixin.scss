@@ -1,0 +1,147 @@
+///For media  quiries!
+
+@mixin MediaQ($screenSize) {
+  @if $screenSize==middle {
+    @media (max-width: 766px) {
+      @content;
+    }
+  }
+
+  @if $screenSize==mobile {
+    @media (max-width: 575px) {
+      @content;
+    }
+  }
+
+  @else if $screenSize==small {
+    @media (min-width: 576px) {
+      @content;
+    }
+  }
+
+  @else if $screenSize==medium {
+    @media (min-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $screenSize==large {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $screenSize==xLarge {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else if $screenSize==xxLarge {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+
+///To Center Objects
+
+@mixin centerlize($Justifiy, $align) {
+  display: flex;
+  justify-content: $Justifiy;
+  align-items: $align;
+}
+
+
+
+///to create circel
+
+@mixin circel($wh) {
+  @content;
+  width: #{$wh}px;
+  height: #{$wh}px;
+  border-radius: 50%;
+}
+
+
+@mixin fonts-details($fontsize, $lineheight) {
+  @content;
+  font-size: $fontsize;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $lineheight;
+}
+
+
+@mixin button-details($fontsize, $lineheight) {
+  @content;
+  display: inline-block;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: $maincolor;
+  cursor: pointer;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  transition: all 0.6s ease-in-out;
+}
+
+
+
+@mixin bullet-props {
+  @content;
+  cursor: pointer;
+  @include circel(18);
+  background-color: #8a8a8a;
+  margin: 10px;
+  border: none;
+  outline: none;
+  transition: all .3s ease-out;
+
+  &:hover {
+    background-color: white;
+    outline: 2px $maincolor solid;
+  }
+
+  @include MediaQ(medium) {
+    @include circel(14);
+  }
+
+  @include MediaQ(xLarge) {
+    @include circel(35);
+  }
+}
+
+
+@mixin headTitle {
+  color: $maincolor;
+
+  @include MediaQ(xLarge) {
+    position: absolute !important;
+    top: 0px !important;
+    left: 20px !important;
+    margin: 0 !important;
+  }
+
+  @include MediaQ(medium) {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+
+  h3 {
+    //font size , line height
+    @include fonts-details(var(--fs-header), var(--ln-header));
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    span {
+      margin-right: 9px;
+    }
+  }
+
+  @content;
+}

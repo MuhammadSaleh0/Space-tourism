@@ -1,0 +1,166 @@
+body {
+    header {
+        position: sticky;
+        top: 20px;
+        z-index: 1000;
+        height: 65px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 15px;
+        margin-bottom: 50px;
+
+
+        .logo {
+            a {
+                img {
+                    @include MediaQ(large) {
+                        width: 55px;
+                        height: 55px;
+                    }
+                }
+            }
+        }
+
+        .burger {
+            padding-right: 15px;
+            cursor: pointer;
+
+            @include MediaQ(medium) {
+                display: none;
+            }
+
+            // img {}
+        }
+
+
+        nav {
+
+            background: hsla(0, 0%, 100%, 0.04);
+            backdrop-filter: blur(81.5485px);
+            transition: .5s;
+            letter-spacing: 3px;
+            color: white;
+            padding-inline: clamp(1rem, 6vw, 5.25rem);
+
+            @include MediaQ(medium) {
+                position: relative;
+                height: 100%;
+            }
+
+            @include MediaQ(middle) {
+                position: absolute;
+                right: 0;
+                top: 60px;
+                height: calc(100vh - 80px);
+                width: 70%;
+                border-radius: 10px;
+                transform: translateX(-60px);
+                opacity: 0;
+                visibility: hidden;
+                padding: 0;
+            }
+
+            @include MediaQ(large) {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -50%;
+                    width: 50%;
+                    height: 8px;
+                    background: rgba(255, 255, 255, 0.04);
+                    backdrop-filter: blur(81.5485px);
+                    transform: translateY(-50%);
+                }
+            }
+
+            .close {
+                position: relative;
+                left: 70%;
+                top: 25px;
+                font-size: 30px;
+                cursor: pointer;
+                font-weight: 100;
+                transition: 0.5s;
+                width: 10px;
+                height: 10px;
+                padding: 5px 8px;
+                border-radius: 50%;
+                border: 1px solid white;
+
+                @include MediaQ(medium) {
+                    display: none;
+                }
+
+                &:hover {
+                    background-color: rgb(238, 66, 66);
+                }
+            }
+
+
+            ul {
+                font-style: italic;
+                @include centerlize(space-around, center);
+
+                /// middle = mobile and small screens. 
+                @include MediaQ(middle) {
+                    margin-top: 60px;
+                    height: 80%;
+                    flex-direction: column;
+                    font-size: 18px;
+
+                }
+
+                @include MediaQ(medium) {
+                    flex-direction: row;
+                    height: 100%;
+                    font-size: 14px;
+                    line-height: 1.5;
+                }
+
+                @include MediaQ(xLarge) {
+                    font-size: 14px;
+                }
+
+                li {
+                    @include MediaQ(medium) {
+
+                        padding: 0 10px;
+                    }
+
+                    @include MediaQ(middle) {
+                        max-height: 100%;
+                        padding: 15px 0;
+                    }
+
+                    a {
+                        color: inherit;
+                        display: flex;
+                        justify-content: center;
+                        transition: .3s;
+
+                        @include MediaQ(middle) {
+                            gap: 10px;
+
+                            &:hover {
+                                transform: translateX(-15px);
+                            }
+                        }
+
+                        @include MediaQ(medium) {
+                            height: 100%;
+                            align-items: center;
+                            padding: 0 5px;
+
+                            span {
+                                padding: 0 5px 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

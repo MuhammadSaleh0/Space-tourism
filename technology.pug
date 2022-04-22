@@ -1,0 +1,56 @@
+//- extends from index.pug
+
+extends index.pug
+
+//- CSS FILE:
+block css-page   
+  link(rel="stylesheet" href="../css/Main/technology.css")
+
+
+//- Content of the page:
+
+block pageContent
+  section 
+    .container
+      .head-technology
+        h3 
+          span 03
+          |SPACE LAUNCH 101
+      .img-slider#technology
+        img(src="../imgs/technology/image-launch-vehicle-landscape.jpg" alt="vehicle" class="visible")
+        img(src="../imgs/technology/image-spaceport-landscape.jpg" alt="spaceport")
+        img(src="../imgs/technology/image-space-capsule-landscape.jpg" alt="capsule")
+      .tec-content
+        .nav.technology
+          button.active-tech(data-class="vehicle") 1
+          button(data-class="spaceport") 2
+          button(data-class="capsule")  3
+        .info 
+          .card.vehicle.visible
+            small THE TERMINOLOGY
+            h3 LAUNCH VEHICLE
+            p A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!
+          .card.spaceport
+            small THE TERMINOLOGY
+            h3 SPACEPORT
+            p A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.
+          .card.capsule 
+            small THE TERMINOLOGY
+            h3 SPACE CAPSULE
+            p A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.
+
+
+
+block liClassTechnology
+  li.active
+    a(href="technology.html") 
+      span 03
+      span TECHNOLOGY
+
+block liClassHome
+  li
+    a(href="index.html") 
+      span 00
+      span Home
+
+

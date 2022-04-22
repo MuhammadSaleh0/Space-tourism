@@ -1,0 +1,29 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include MediaQ(mobile) {
+    width: 100%;
+  }
+
+  @include MediaQ(small) {
+    width: 540px;
+  }
+
+  @include MediaQ(medium) {
+    width: 720px;
+  }
+
+  @include MediaQ(large) {
+    width: 960px;
+  }
+
+  @include MediaQ(xlarge) {
+    width: 1140px;
+  }
+
+  @include MediaQ(xxlarge) {
+    width: 1320px;
+  }
+}

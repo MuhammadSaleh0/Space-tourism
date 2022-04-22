@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Bellefair", serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

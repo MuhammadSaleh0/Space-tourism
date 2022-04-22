@@ -1,0 +1,195 @@
+body {
+    background-image: url(../../../imgs/home/background-home-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+
+
+    @include MediaQ(medium) {
+        background-image: url(../../../imgs/home/background-home-tablet.jpg);
+    }
+
+    @include MediaQ(large) {
+        background-image: url(../../../imgs/home/background-home-desktop.jpg);
+    }
+
+    section {
+
+        color: white;
+        text-align: center;
+
+        .container {
+            @include centerlize(space-between, center);
+            flex-direction: column;
+            gap: 150px;
+
+
+            @include MediaQ(xLarge) {
+                width: 90%;
+                margin: 0 auto;
+                height: calc(100% - 130px);
+                @include centerlize(space-between, center);
+                flex-direction: row;
+                gap: 200px;
+                perspective: 1500px;
+            }
+
+            .text {
+
+                padding-top: 30px;
+
+                @include MediaQ(xLarge) {
+                    text-align: start;
+                    width: 50%;
+                }
+
+                h4 {
+                    color: $maincolor;
+
+                    @include MediaQ(middle) {
+
+                        //font size , line height
+                        @include fonts-details(24px, 30px);
+                        margin-bottom: 20px
+                    }
+
+                    @include MediaQ(medium) {
+
+                        //font size , line height
+                        @include fonts-details(35px, 30px);
+                        font-weight: 600;
+                        letter-spacing: 4px;
+                    }
+
+                    @include MediaQ(xLarge) {
+
+                        //font size , line height
+                        @include fonts-details(24px, 40px);
+                        margin-bottom: 50px;
+                        font-weight: 600;
+                        letter-spacing: 3px;
+                    }
+                }
+
+                h3 {
+                    @include MediaQ(middle) {
+                        margin: 18px 0;
+                        //font size , line height
+                        @include fonts-details(80px, 100px);
+                    }
+
+                    @include MediaQ(medium) {
+                        margin: 25px 0;
+                        //font size , line height
+                        @include fonts-details(100px, 100px);
+                    }
+
+                    @include MediaQ(xLarge) {
+                        margin-bottom: 40px;
+                        @include fonts-details(120px, 100px);
+                    }
+                }
+
+                p {
+                    display: block;
+                    color: $maincolor;
+                    overflow: hidden;
+
+                    @include MediaQ(middle) {
+                        margin: 15px 0;
+
+                        //font size , line height
+                        @include fonts-details(18px, 28px);
+                    }
+
+                    @include MediaQ(medium) {
+                        margin: 15px 0;
+
+                        //font size , line height
+                        @include fonts-details(26px, 50px);
+                    }
+
+                    @include MediaQ(xLarge) {
+                        //font size , line height
+                        @include fonts-details(28px, 40px);
+                    }
+
+                }
+            }
+
+            .circel {
+
+                @include centerlize(center, center);
+                transition: .5s;
+                position: relative;
+                transform-style: preserve-3d;
+
+                perspective: 600px;
+                animation: rounded infinite 1.5s linear;
+
+                @include MediaQ(middle) {
+                    @include circel(150);
+                    margin: 0 auto;
+                }
+
+                @include MediaQ(medium) {
+                    @include circel(250);
+                    margin: 0 auto;
+                }
+
+                @include MediaQ(xLarge) {
+                    @include circel(330);
+
+                }
+
+                .front,
+                .back {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 30px;
+                    position: absolute;
+                    backface-visibility: hidden;
+                    border-radius: 50%;
+
+                }
+
+                .front {
+                    background-color: hsla(234, 57%, 22%, 0.712);
+                    backdrop-filter: blur(81.5px);
+                }
+
+                .back {
+                    background-color: hsla(228, 53%, 7%, 0.705);
+                    transform: rotatey(180deg);
+                    backdrop-filter: blur(41.5px);
+                }
+
+                h3 {
+                    color: $maincolor;
+                    font-weight: bolder;
+                    letter-spacing: 1px;
+                    font-size: 18px;
+                    transition: 0.5s;
+
+                    @include MediaQ(medium) {
+                        letter-spacing: 1px;
+                        font-size: 35px;
+                    }
+
+                    @include MediaQ(xLarge) {
+                        letter-spacing: 6px;
+                        font-size: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes rounded {
+    100% {
+        transform: rotatey(360deg);
+    }
+}
