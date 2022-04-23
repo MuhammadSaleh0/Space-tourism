@@ -319,20 +319,20 @@ body header nav ul li a {
 }
 
 body {
-  background-image: url(../../../imgs/home/background-home-mobile.jpg);
+  background-image: url(../../imgs/home/background-home-mobile.jpg);
   background-position: center;
   background-size: cover;
 }
 
 @media (min-width: 767px) {
   body {
-    background-image: url(../../../imgs/home/background-home-tablet.jpg);
+    background-image: url(../../imgs/home/background-home-tablet.jpg);
   }
 }
 
 @media (min-width: 992px) {
   body {
-    background-image: url(../../../imgs/home/background-home-desktop.jpg);
+    background-image: url(../../imgs/home/background-home-desktop.jpg);
   }
 }
 

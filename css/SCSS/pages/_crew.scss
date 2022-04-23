@@ -1,14 +1,14 @@
 body {
-    background-image: url(../../../imgs/crew/background-crew-mobile.jpg);
+    background-image: url(../../imgs/crew/background-crew-mobile.jpg);
     background-position: center;
     background-size: cover;
 
     @include MediaQ(medium) {
-        background-image: url(../../../imgs/crew/background-crew-tablet.jpg);
+        background-image: url(../../imgs/crew/background-crew-tablet.jpg);
     }
 
     @include MediaQ(large) {
-        background-image: url(../../../imgs/crew/background-crew-tablet.jpg);
+        background-image: url(../../imgs/crew/background-crew-tablet.jpg);
     }
 
     section {

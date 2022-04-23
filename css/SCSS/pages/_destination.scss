@@ -1,14 +1,14 @@
 body {
-  background-image: url(../../../imgs/destination/background-destination-mobile.jpg);
+  background-image: url(../../imgs/destination/background-destination-mobile.jpg);
   background-position: center;
   background-size: cover;
 
   @include MediaQ(medium) {
-    background-image: url(../../../imgs/destination/background-destination-mobile.jpg);
+    background-image: url(../../imgs/destination/background-destination-mobile.jpg);
   }
 
   @include MediaQ(large) {
-    background-image: url(../../../imgs/destination/background-destination-desktop.jpg);
+    background-image: url(../../imgs/destination/background-destination-desktop.jpg);
   }
 
   section {
